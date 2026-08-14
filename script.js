@@ -1,32 +1,33 @@
-
-const rockButton = document.getElementById("rock");
-const paperButton = document.getElementById("paper");
-const scissorsButton = document.getElementById("scissors");
+const rockButton = document.getElementById("rockBtn");
+const paperButton = document.getElementById("paperBtn");
+const scissorsButton = document.getElementById("scissorsBtn");
 const resultDiv = document.getElementById("result");
+
+
+let playerScore = 0;
+let computerScore = 0;
+
+const playerScoreElem = document.getElementById("playerScore");
+const computerScoreElem = document.getElementById("computerScore");
+
 
 // Handle rock button click
 rockButton.addEventListener("click", () => {
-    const userChoice = getUserChoice("rock");
-});
- // Handle paper button click
-paperButton.addEventListener("click", () => {
-    const userChoice = getUserChoice("paper");
+  const userChoice = getUserChoice("rock");
 
+  playRound(userChoice);
+});
+// Handle paper button click
+paperButton.addEventListener("click", () => {
+  const userChoice = getUserChoice("paper");
+  playRound(userChoice);
 });
 
 // Handle scissors button click
 scissorsButton.addEventListener("click", () => {
-    const userChoice = getUserChoice("scissors");
-    
+  const userChoice = getUserChoice("scissors");
+  playRound(userChoice);
 });
-
-const playRound = (userChoice) => {
-    const computerChoice = getComputerChoice();
-    const result = determineWinner(userChoice, computerChoice);
-    resultDiv.textContent = result;
-};
-
-playRound(userChoice);
 
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
@@ -36,41 +37,66 @@ const getUserChoice = (userInput) => {
     userInput === "paper" ||
     userInput === "scissors"
   ) {
-    return userInput;;
+    return userInput;
   }
 };
+
+
+/*this gets the computer's choice of move based on
+random numbers and their corresponding switch case. */  
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
     case 0:
       return "rock";
-      break;
+      
     case 1:
       return "paper";
-      break;
+      
     case 2:
       return "scissors";
-      break;
+      
   }
 };
+
 
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
-    return "The game is a tie!";
+    return "Tie";
   } else if (userChoice === "rock" && computerChoice === "paper") {
-    return "You lost, sadt huhu";
+    return "Lose";
   } else if (userChoice === "paper" && computerChoice === "scissors") {
-    return "You lost, sadt huhu";
+    return "Lose";
   } else if (userChoice === "scissors" && computerChoice === "rock") {
-    return "You lost, sadt huhu";
+    return "Lose";
   } else {
-    return "You won! Congratulations!";
+    return "Win";
   }
 };
 
-const playGame = () => {
-  const userChoice = getUserChoice();
+//This provides the whole round of what the user and computer chose. 
+const playRound = (userChoice) => {
+
   const computerChoice = getComputerChoice();
 
+  const result = determineWinner(userChoice, computerChoice);
+  
+  if (result === "Win") {
+    resultDiv.textContent = "Wow! You won!";
+  }
+  else if (result === "Lose") {
+    resultDiv.textContent = "Aww, you lost!";
+  }
+  else {
+    resultDiv.textContent = "Safe!, it's a tie!";
+  }
+
+  if (result === "Win"){
+    playerScore++;
+    playerScoreElem.textContent = playerScore;
+  }
+  else if (result === "Lose") {
+    computerScore++;
+    computerScoreElem.textContent = computerScore;
+}
 };
-playGame();
