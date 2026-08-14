@@ -2,6 +2,7 @@ const rockButton = document.getElementById("rockBtn");
 const paperButton = document.getElementById("paperBtn");
 const scissorsButton = document.getElementById("scissorsBtn");
 const resultDiv = document.getElementById("result");
+const incomingMove = document.getElementById("incomingMove");
 
 
 let playerScore = 0;
@@ -9,6 +10,11 @@ let computerScore = 0;
 
 const playerScoreElem = document.getElementById("playerScore");
 const computerScoreElem = document.getElementById("computerScore");
+
+const sendAttack = () => {
+  const computerChoice = getComputerChoice();
+  incomingMove.textContent = computerChoice;
+};
 
 
 // Handle rock button click
@@ -100,3 +106,4 @@ const playRound = (userChoice) => {
     computerScoreElem.textContent = computerScore;
 }
 };
+sendAttack();

@@ -1,44 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, paper, scissors!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-     <!--========================
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--========================
     ==========CONTAINER========-->
     <div id="container">
-        <h1>Rock, paper, scissors!</h1>
-        <div id="score">
-            <p>Player: <span id="playerScore">0</span></p>
-            <p>Computer: <span id="computerScore">0</span></p>
-        </div>
-        <div id="choices">
-            <button type="button" id="rockBtn">
-                <img src="/rock.png" 
-                alt="rock" width="30" 
-                height="30"
-                class="rock">
-            </button>
+      <h1 class="title">Rock, paper, scissors!</h1><b
+      <h3 class="subtitle"> Choose your move </h3>
 
-            <button type="button" id="paperBtn">
-                <img src="/paper.png" 
-                alt="paper" width="30" 
-                height="30"
-                class="paper">
-            </button>
-            <button type="button" id="scissorsBtn">
-                <img src="/scissors.png" 
-                alt="scissors" width="30" 
-                height="30"
-                class ="scissors">
-            </button>
-        </div><br>
-        <div id="result"></div>
+      <div id="incomingMove"></div>
+      <br /><br />
+
+      <div id="choices">
+        <button type="button" id="rockBtn">
+          <img src="/rock.png" alt="rock" width="30" height="30" class="rock" />
+        </button> 
+        <button type="button" id="paperBtn">
+          <img
+            src="/paper.png"
+            alt="paper"
+            width="30"
+            height="30"
+            class="paper"
+          />
+        </button>
+        <button type="button" id="scissorsBtn">
+          <img
+            src="/scissors.png"
+            alt="scissors"
+            width="30"
+            height="30"
+            class="scissors"
+          />
+        </button>
+      </div>
+      <br />
+      <div id="result"></div>
+    </div>
+
+    
+    <div id="score">
+      <p id="player">Player: <span id="playerScore">0</span></p>
+      <p id="computer">Computer: <span id="computerScore">0</span></p>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

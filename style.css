@@ -1,11 +1,38 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: rgb(167,181,158);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #24243A;
+    border: 3px solid #C9A86A;
+    border-radius: 10px;
+}
+#container{
+    position: relative;
 }
 .scissors {
     transform: rotate(-90deg);
+}
+#choices{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 50px;
+}
+
+#incomingMove {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+  
+}
+#score {
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+
+    display: flex;
+    justify-content:flex-end;
+    align-items: end;
+    margin-right: 20px;
+    padding: 10px 15px;
 }
