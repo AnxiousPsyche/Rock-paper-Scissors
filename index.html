@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, paper, scissors!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--========================
     ==========CONTAINER========-->
     <div id="container">
-      <h1 class="title">Rock, paper, scissors!</h1><b
-      <h3 class="subtitle"> Choose your move </h3>
+      <h1 class="title">
+        <span class="line"></span>Rock,paper,scissors!
+        <span class="line"></span>
+      </h1>
+      <h3 class="subtitle">
+        <span class="diamond"></span> Choose your move
+        <span class="diamond"></span>
+      </h3>
 
       <div id="incomingMove"></div>
       <br /><br />
@@ -19,7 +31,7 @@
       <div id="choices">
         <button type="button" id="rockBtn">
           <img src="/rock.png" alt="rock" width="30" height="30" class="rock" />
-        </button> 
+        </button>
         <button type="button" id="paperBtn">
           <img
             src="/paper.png"
@@ -41,12 +53,11 @@
       </div>
       <br />
       <div id="result"></div>
-    </div>
 
-    
-    <div id="score">
-      <p id="player">Player: <span id="playerScore">0</span></p>
-      <p id="computer">Computer: <span id="computerScore">0</span></p>
+      <div id="score">
+        <p id="player">Player: <span id="playerScore">0</span></p>
+        <p id="computer">Computer: <span id="computerScore">0</span></p>
+      </div>
     </div>
 
     <script src="script.js"></script>

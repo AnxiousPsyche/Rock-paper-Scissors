@@ -1,15 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .6em;
     text-align: center;
     background-color: #24243A;
-    border: 3px solid #C9A86A;
     border-radius: 10px;
+    color: #f2c879;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
 }
 #container{
+    border: 3px solid #C9A86A;
+    max-width: 800px;
+    max-height: 100%;
     position: relative;
 }
+
+
+
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #8a7f5a;
+}
+
 .scissors {
     transform: rotate(-90deg);
+}
+
+#rockBtn,#paperBtn,#scissorsBtn{
+    border: 2px solid #8a7f5a;
+    margin: 5px;
 }
 #choices{
     display: flex;
@@ -26,13 +50,22 @@ body {
   
 }
 #score {
-    right: 20px;
-    left: 20px;
-    bottom: 20px;
-
     display: flex;
     justify-content:flex-end;
     align-items: end;
-    margin-right: 20px;
-    padding: 10px 15px;
+    gap: 15px;
+    margin-right: 10px;
+   
+}
+
+#computer::before {
+  content: "|";
+  margin-right: 14px;
+  color: #8a7f5a;
+}
+
+.diamond::before {
+  content: "\25C6";
+  color: #f2c879;
+  font-size: 11px;
 }
