@@ -9,22 +9,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
 }
 #container{
     border: 3px solid #C9A86A;
-    max-width: 800px;
+    width: 100%;
+    max-width: 500px;
     max-height: 100%;
     position: relative;
-}
-
-
-
-
-.line {
-  flex: 1;
-  height: 1px;
-  background-color: #8a7f5a;
 }
 
 .scissors {
@@ -58,6 +55,8 @@ body {
    
 }
 
+
+/*TITLE and SUBTITLE DESIGN*/
 #computer::before {
   content: "|";
   margin-right: 14px;
@@ -68,4 +67,9 @@ body {
   content: "\25C6";
   color: #f2c879;
   font-size: 11px;
+}
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #8a7f5a;
 }

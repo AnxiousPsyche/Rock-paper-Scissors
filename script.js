@@ -7,14 +7,18 @@ const incomingMove = document.getElementById("incomingMove");
 
 let playerScore = 0;
 let computerScore = 0;
+let requiredMove = null;
+let noteSpawnTime = null;
+let fallDuration = 2200;
+let isNoteActive = false;
+let lives = 3;
+
+/*   Starts as null because no round has started yet,
+ there's no move to reference yet.*/
+let currentComputerMove = null;
 
 const playerScoreElem = document.getElementById("playerScore");
 const computerScoreElem = document.getElementById("computerScore");
-
-const sendAttack = () => {
-  const computerChoice = getComputerChoice();
-  incomingMove.textContent = computerChoice;
-};
 
 
 // Handle rock button click
@@ -80,6 +84,11 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
+const sendAttack = () => {
+  currentComputerMove = getComputerChoice();
+  incomingMove.textContent = currentComputerMove;
+};
+
 //This provides the whole round of what the user and computer chose. 
 const playRound = (userChoice) => {
 
@@ -106,4 +115,19 @@ const playRound = (userChoice) => {
     computerScoreElem.textContent = computerScore;
 }
 };
-sendAttack();
+
+const getRequiredMove = (computersMove) => {
+  if (computersMove === "rock") {
+    return "paper";
+  }
+  else if (computersMove === "paper") {
+    return "scissors";
+  }
+  else if (computersMove === "scissors") {
+    return "rock";
+  }
+};
+
+const setButtonsEnabled = (true) => {
+  
+}
